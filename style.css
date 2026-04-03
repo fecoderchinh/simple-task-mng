@@ -7,6 +7,7 @@
         flex-direction: row;
         align-items: center;
         grid-template-columns: 200px 1fr;
+        border-bottom: 1px solid #e0e6ed;
     }
     .right_nav {
         margin-left: 110px;
@@ -43,7 +44,6 @@
 }
 
 .sidebar{
-     width: 280px;
     height: 100vh;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -90,6 +90,14 @@
     margin-right: 15px;
 }
 
+.sidebar .links__icon {
+    background: url(./images/Sidebar\ link\ icon.svg) no-repeat center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    fill:red;
+}
+
 .log_out {
     border-top: 1px solid #e0e6ed;
     padding-top: 20px;
@@ -109,7 +117,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
     background-color: #ffffff;
 }
 
@@ -166,7 +173,6 @@
 }
 
 .task_row {
-    padding: 0 30px 30px 30px;
     flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -232,4 +238,37 @@
     display: flex;
     flex-direction: row;
     gap: 4px;
+}
+
+section.content {
+    width: 100%;
+
+    .container {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .articles {
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .task_card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .task_card__header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+    }
 }
