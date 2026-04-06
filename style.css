@@ -8,6 +8,9 @@
         align-items: center;
         grid-template-columns: 200px 1fr;
         border-bottom: 1px solid #e0e6ed;
+             @media only screen and (max-width: 375px) {
+                flex-direction: column;
+            }
     }
     .right_nav {
         margin-left: 110px;
