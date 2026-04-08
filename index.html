@@ -24,11 +24,45 @@
                     </button>
                 </div>
                 <div class="avatar">
-                    <div class="bell">
-                        <img src="images/Notification icon.png" alt="Notification">
+                    <div class="bell_container">
+                        <div class="bell">
+                            <img src="images/Notification icon.png" alt="Notification">
+                            <span class="notification_dot"></span>
+                        </div>
+
+                        <div class="notification_dropdown">
+                            <div class="dropdown_header">
+                                <h3>Notifications</h3>
+                                <button class="settings_btn"><img src="images/Edit.png" alt="Settings"></button>
+                            </div>
+                            
+                            <ul class="notification_list">
+                                <li class="notification_item unread">
+                                    <img src="images/Avatar.png" alt="" class="item_avatar">
+                                    <div class="item_content">
+                                        <p><strong>Brigid Dawson</strong> followed you</p>
+                                        <span class="item_time">4 hours ago</span>
+                                    </div>
+                                    <span class="status_indicator"></span>
+                                </li>
+                                </ul>
+                            
+                            <a href="#" class="see_all">See all recent activity</a>
+                        </div>
                     </div>
-                    <div class="logged">
-                        <img src="images/Avatar.png" alt="Avatar">
+                    <div class="profile_container">
+                        <div class="logged">
+                            <img src="images/Avatar.png" alt="Avatar">
+                        </div>
+                        <span class="dropdown_arrow"></span>
+
+                        <div class="profile_dropdown">
+                            <ul>
+                                <li><a href="#">My Projects</a></li>
+                                <li><a href="#">Update Profile</a></li>
+                                <li><a href="#" class="logout_link">Logout</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
