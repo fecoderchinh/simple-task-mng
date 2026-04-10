@@ -24,11 +24,35 @@
                     </button>
                 </div>
                 <div class="avatar">
-                    <div class="bell">
+                    <div class="bell dropdown_wrap">
                         <img src="images/Notification icon.png" alt="Notification">
+                        <div class="dropdown bell_dropdown">
+                            <div class="dropdown_header">Notifications</div>
+                            <ul class="dropdown_list">
+                                <li class="dropdown_item">
+                                    <span class="notif_dot"></span>
+                                    <span>New task assigned to you</span>
+                                </li>
+                                <li class="dropdown_item">
+                                    <span class="notif_dot"></span>
+                                    <span>Project deadline tomorrow</span>
+                                </li>
+                                <li class="dropdown_item read">
+                                    <span class="notif_dot read"></span>
+                                    <span>Meeting rescheduled to 10 AM</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="logged">
+                    <div class="logged dropdown_wrap">
                         <img src="images/Avatar.png" alt="Avatar">
+                        <div class="dropdown avatar_dropdown">
+                            <ul class="dropdown_list">
+                                <li class="dropdown_item"><a href="#">Profile</a></li>
+                                <li class="dropdown_item"><a href="#">Settings</a></li>
+                                <li class="dropdown_item dropdown_logout"><a href="#">Log Out</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

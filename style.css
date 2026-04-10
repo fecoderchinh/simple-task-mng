@@ -129,6 +129,117 @@ svg {
     background: #f7f9fc;
 }
 
+/* ── Dropdown wrapper ── */
+.dropdown_wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 220px;
+    padding-top: 0.55rem;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 100;
+}
+
+.dropdown::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0.55rem 0 0 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.12);
+    z-index: -1;
+}
+
+.dropdown_wrap:hover .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* ── Bell dropdown ── */
+.bell_dropdown {
+    min-width: 260px;
+}
+
+.dropdown_header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    padding: 0.75rem 1rem 0.4rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.dropdown_list {
+    list-style: none;
+    margin: 0;
+    padding: 0.35rem 0;
+}
+
+.dropdown_item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text);
+    transition: background 0.15s;
+}
+
+.dropdown_item:hover {
+    background: var(--bg);
+}
+
+.dropdown_item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.notif_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+}
+
+.notif_dot.read {
+    background: var(--line);
+}
+
+.dropdown_item.read {
+    color: var(--muted);
+}
+
+/* ── Avatar dropdown ── */
+.avatar_dropdown {
+    min-width: 160px;
+}
+
+.dropdown_logout {
+    border-top: 1px solid var(--line);
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+}
+
+.dropdown_logout a {
+    color: #b42318;
+}
+
 .content {
     padding-block: 1rem 1.5rem;
 }
