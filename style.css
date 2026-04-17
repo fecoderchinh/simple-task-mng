@@ -427,6 +427,17 @@ svg {
     border-radius: 12px;
 }
 
+.bell_container:before {
+    position: absolute;
+    top: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.bell_container:hover:before {
+    content: ""
+}
+
 .bell_container:hover .notification_dropdown {
     display: block;
 }
