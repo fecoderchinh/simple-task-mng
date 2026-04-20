@@ -25,7 +25,7 @@
     }
   </style>
 </head>
-<body class="font-grotesk bg-[#f3f6fb] min-h-screen">
+<body class="font-grotesk bg-white min-h-screen select-none">
   <div>
     <!-- Navigation bar -->
 
@@ -48,13 +48,54 @@
               <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center cursor-pointer relative">
                 <img src="images/Notification.png" alt="Notification" class="w-6">
               </div>
+
+              <div class="absolute top-full right-0 mt-3 w-80 bg-white border border-line rounded-xl shadow-xl hidden group-hover:block">
+                <div class="bg-red-500 text-white p-3 flex justify-between items-center rounded-t-xl">
+                  <h3 class="font-bold text-sm">Notifications</h3>
+                  <img src="images/Edit.png" alt="" class="w-4 invert">
+                </div>
+
+                <ul class="max-h-64 overflow-y-auto">
+                  <li class="p-3 flex gap-3 border-b border-slate-50 hover:bg-slate-50">
+                    <img src="images/Avatar.png" class="w-9 h-9 rounded-full">
+                    <div class="text-xs">
+                      <p><strong>Brigid Dawson</strong> followed you</p>
+                      <span class="text-muted">4 hours ago</span>
+                    </div>
+                    <span class="ml-auto self-center w-2 h-2 bg-teal-400 rounded-full"></span>
+                  </li>
+                  <li class="p-3 flex gap-3 border-b border-slate-50 hover:bg-slate-50">
+                    <img src="images/Avatar.png" class="w-9 h-9 rounded-full">
+                    <div class="text-xs">
+                      <p><strong>Brigid Dawson</strong> followed you</p>
+                      <span class="text-muted">4 hours ago</span>
+                    </div>
+                    <span class="ml-auto self-center w-2 h-2 bg-teal-400 rounded-full"></span>
+                  </li>
+                  <li class="p-3 flex gap-3 border-b border-slate-50 hover:bg-slate-50">
+                    <img src="images/Avatar.png" class="w-9 h-9 rounded-full">
+                    <div class="text-xs">
+                      <p><strong>Brigid Dawson</strong> followed you</p>
+                      <span class="text-muted">4 hours ago</span>
+                    </div>
+                    <span class="ml-auto self-center w-2 h-2 bg-teal-400 rounded-full"></span>
+                  </li>
+                </ul>
+                <a href="#" class="block text-center p-3 text-sm font-bold text-teal-500 hover:bg-slate-100">See all recent activity</a>
+              </div>
             </div>
+          </div>
 
         <!-- Avatar Contentner -->
 
             <div class="group relative flex items-center cursor-pointer">
               <div class="w-10 h-10 rounded-full overflow-hidden border border-line">
                 <img src="images/Avatar.png" alt="Avatar">
+
+                <div class="absolute top-full right-0 mt-3 w-40 bg-white border border-line rounded-xl shadow-xl hidden group-hover:block">
+                  <a href="#" class="block text-center p-4 text-sm hover:bg-slate-100">My Projects</a>
+                  <a href="#" class="block text-center p-4 text-sm hover:bg-slate-100">Update Profile</a>
+                  <a href="#" class="block text-center p-4 text-sm hover:bg-slate-100">Logout</a>
               </div>
             </div>
           </div>
@@ -95,7 +136,7 @@
         <!-- tasks Bar -->
 
         <div class="flex-1 space-y-6 py-3">
-          <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white">
             <h1 class="text-3xl font-bold tracking-tight">Tasks</h1>
             <div class="flex items-center gap-4">
               <div class="flex p-1">
