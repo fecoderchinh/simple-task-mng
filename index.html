@@ -63,6 +63,27 @@
 
         // 5. Tính trung bình cộng của mảng
         const averageArray = (str) => str.length === 0 ? 0 : sumArray(str) / str.length;
+        
+        // 5.2
+        // Tính trung bình cộng của mảng với for
+        const averageArray2 = (nums) => { 
+          
+          // tạo biến sum 
+          let sum = 0;
+          
+          // xử lý tuàn tự để tính được tổng của mảng
+          for (let i = 0; i < nums.length; i++) {
+
+            // tính tổng của mãng
+            sum += nums[i];
+          }
+
+            // tính trung bình cộng của mãng 
+            return sum / nums.length;
+        }
+
+        // Test hàm
+        console.log('TEST 5.2', averageArray2([1, 3, 4, 2]));
 
         // 6. Lấy phần tử cuối cùng của mảng
         const getLastElement = (str) => str[str.length - 1];
@@ -70,17 +91,24 @@
         // 7.1 Đếm số ký tự trong chuỗi
         const countChars = (str) => str.length;
 
-        // 7.2 for vertion
+        // 7.2 **Đếm số ký tự trong chuỗi với for (chữ!)
         const countChars2 = (str) => {
+          
+          //khởi tạo một biến = 0
           let count = 0;
 
+          // xử lý tuàn tự đẻ đếm tổng các ký tự trong chuổi 
           for (let i = 0; i < str.length; i++) {
-            count++;
+
+            // tăng dần giá trị đếm trong vòng lập
+            count = count + 1;
           }
+          // trả về tổng số đếm được trong vồng lặp
           return count;
         }
 
-        console.log('TEST 7.2', countChars2([1, 3, 4, 2]));
+        //
+        console.log('TEST 7.2', countChars2("Hello World"));
 
         // 8. *Đếm số nguyên âm trong chuỗi (a, e, i, o, u)
         const countVowels = (str) => {
@@ -120,49 +148,82 @@
         // 12.1 Lọc ra các số chẵn trong mảng
         const filterEvenNumbers = (str) => str.filter(num => num % 2 === 0);
 
-        // 12.2 for vertion
+        // 12.2 Lọc ra các số chẵn trong mảng với for
         const filterEvenNumbers2 = (nums) => {
+
+          // khởi tạo một biến mảng rõng.
           let result = [];
+
+          // Xử lý tuần tự để lọc các số chẵn trong mảng.
           for (let i = 0; i < nums.length; i++) {
+
+            // Kiểm tra nếu số chia hết cho 2 thì là số chẵn.
             if (nums[i] % 2 === 0) {
+
+              // thêm số chẵn vào mảng result.
               result.push(nums[i]);
             }
           }
+
+          // trả về mảng chứa các số chẵn.
           return result;
         }
 
+        // in ra mảng các số chẵn được lọc từ mảng đầu vào
         console.log("TEST 12.2", filterEvenNumbers2([10, 5, 8, 20, 2]));
 
         // 13.1 Lọc ra các số lẻ trong mảng
         const filterOddNumbers = (str) => str.filter(num => num % 2 !== 0);
 
-        // 13.2 for vertion
+        // 13.2 Lọc ra các số lẻ trong mảng với for
           const filterOddNumbers2 = (nums) => {
+
+            // Khởi tạo một biến mảng rõng.
           let result = [];
+
+          // Xử lý tuần tự để lọc các số lẻ trong mảng.
           for (let i = 0; i < nums.length; i++) {
+
+            // Kiểm tra nếu số không chia hết cho 2 thì là số lẻ.
             if (nums[i] % 2 !== 0) {
+
+              // thêm số chẵn vào mảng result.
               result.push(nums[i]);
             }
           }
+
+          // trả về mảng chứa các số lẻ.
           return result;
         }
 
+        // in ra mảng các số lẻ được lọc từ mảng đầu vào
         console.log("TEST 13.2", filterOddNumbers2([10, 5, 8, 20, 2]));
 
         // 14. Loại bỏ phần tử trùng lặp trong mảng
         const removeDuplicates = (str) => [...new Set(str)];
 
-        // 14.2 for vertion
+        // 14.2 Loại bỏ phần tử trùng lặp trong mảng với for
         const removeDuplicates2 = (nums) => {
+
+          //khởi tạo một biến mảng rõng
           let result = [];
+
+          // Xử lý tuần tự để Loại bỏ phần tử trùng lặp trong mảng.
           for (let i = 0; i < nums.length; i++) {
+
+            // Kiểm tra nếu số trùng lặp là loại.
             if (!result.includes(nums[i])) {
+
+              // thêm só vào mảng bang đầu.
               result.push(nums[i]);
             }
           }
+
+          // trả về mảng.
           return result;
         }
 
+        // Test mảng
         console.log("TEST 14.2", removeDuplicates2([10, 5, 8, 20, 2]));
 
         // 15. Sắp xếp mảng tăng dần
