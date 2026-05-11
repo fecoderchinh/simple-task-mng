@@ -24,6 +24,7 @@
       --font-grotesk: "Space Grotesk", sans-serif;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <script>
     /*
@@ -267,6 +268,7 @@
 
         function myFunction() { alert("I am an alert box!"); }
 </script>
+
 </head>
 <body class="font-grotesk bg-white min-h-screen select-none">
   <div>
@@ -278,9 +280,9 @@
           <img src="images/logo.png" alt="Logo" class="h-8">
         </a>
 
-        <div class="flex-1 flex items-center gap-4 max-w-1xl">
-          <div class="flex-1 flex items-center bg-white border border-line rounded-full px-4 py-2">
-            <input type="text" placeholder="Search..." onclick="myFunction()" class="w-full outline-none bg-transparent text-sm">
+        <div class="flex-1 flex items-center gap-4 max-w-1xl" onclick="myFunction()">
+          <div class="flex-1 flex items-center bg-white border border-line rounded-full px-4 py-2" onclick="myFunction()">
+            <input type="text"  name="search" placeholder="Search..." id="searchInput" class="w-full outline-none bg-transparent text-sm">
             <button onclick="myFunction()" class="ml-2"><img src="images/search.png" alt="" class="w-4"></button>
           </div>
 
@@ -400,11 +402,16 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
-            <section class="bg-todo-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-              <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                <img src="images/To_do.png" class="w-7"> <span class="text-[#14367B]">To do</span>
-              </div>
-              <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                <section class="bg-todo-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
+                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
+                    <img src="images/To_do.png" class="w-7"> <span class="text-[#14367B]">To do</span>
+                  </div>
+
+              <!--start todo section-->
+
+              <ul id="todoItems"></ul>
+
+              <!-- <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                 <div class="flex justify-between items-center mb-3">
                   <img src="images/Avatar.png">
                   <div class="flex gap-1 w-18">
@@ -433,14 +440,23 @@
                     </div>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </section>
+                </div> 
+                -->
 
-            <section class="bg-progress-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-                <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                  <img src="images/In_progress.png" class="w-7"> <span class="text-[#8F4F00]">In progress</span>
-                </div>
-                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+              <!--end todo section-->
+
+                  </section>
+
+                <section class="bg-progress-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
+                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
+                    <img src="images/In_progress.png" class="w-7"> <span class="text-[#8F4F00]">In progress</span>
+                  </div>
+
+                <!--start progress section-->
+
+                <ul id="progressItems"></ul>
+
+              <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div class="flex justify-between items-center mb-3">
                     <img src="images/Avatar.png">
                     <div class="flex gap-1 w-18">
@@ -470,13 +486,22 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
-              </section>
+              -->
+                  <!--End progress section-->
 
-            <section class="bg-done-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-                <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                  <img src="images/Done.png" class="w-7"> <span class="text-[#81290E]">Done</span>
-                </div>
-                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  </section>
+
+                <section class="bg-done-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
+
+                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
+                    <img src="images/Done.png" class="w-7"> <span class="text-[#81290E]">Done</span>
+                  </div>
+
+                <!--start Done section-->
+
+                <ul id="DoneItems"></ul>
+
+              <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div class="flex justify-between items-center mb-3">
                     <img src="images/Avatar.png">
                     <div class="flex gap-1 w-18">
@@ -506,11 +531,170 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
-              </section>
+                <!--
+                  <!--End Done section-->
+
+                  </section>
           </div>
         </div>
       </div>
     </main>
   </div>
+
+  <script>
+    // const input = document.getElementById("searchInput");
+
+    //   input.addEventListener("keypress", 
+    //     // gọi anonymous callback  
+    //     (e) => {
+    //       alert(`bạn vừa bấm: ${e.code}`)
+    //     }
+    //   );
+
+    //   input.addEventListener("keypress", 
+    //     logKey(e)
+    //   );
+
+    //   function logKey(e) {
+    //     alert(`bạn vừa bấm: ${e.code}`)
+    //   }
+
+      // khai báo 1 biến thay thế cho element ở DOM
+      const todoItems = document.getElementById("todoItems");
+
+      const data = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`];
+
+      for(let i=0; i<data.length; i++) {
+        // khởi tạo element
+        const li = document.createElement("li");
+       
+        // gán giá trị cho element
+        li.innerHTML = data[i];
+
+        // đưa element ở trên vào trong danh sách xác định
+        todoItems.appendChild(li);
+      }
+
+      // khai báo 1 biến thay thế cho element ở DOM
+      const progressItems = document.getElementById("progressItems");
+
+      const data2 = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`];
+
+      for(let i=0; i<data.length; i++) {
+        // khởi tạo element
+        const li = document.createElement("li");
+       
+        // gán giá trị cho element
+        li.innerHTML = data2[i];
+
+        // đưa element ở trên vào trong danh sách xác định
+        progressItems.appendChild(li);
+      }
+
+        // khai báo 1 biến thay thế cho element ở DOM
+      const DoneItems = document.getElementById("DoneItems");
+
+      const data3 = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`,
+                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div class="flex justify-between items-center mb-3">
+                    <img src="images/Avatar.png">
+                    <div class="flex gap-1 w-18">
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>`];
+
+      for(let i=0; i<data.length; i++) {
+        // khởi tạo element
+        const li = document.createElement("li");
+       
+        // gán giá trị cho element
+        li.innerHTML = data3[i];
+
+        // đưa element ở trên vào trong danh sách xác định
+        DoneItems.appendChild(li);
+      }
+
+  </script>
+  
 </body>
 </html>
