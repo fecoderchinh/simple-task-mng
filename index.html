@@ -562,46 +562,59 @@
       // khai báo 1 biến thay thế cho element ở DOM
       const todoItems = document.getElementById("todoItems");
 
-      const data = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`];
+      // const data = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      //             <div class="flex justify-between items-center mb-3">
+      //               <img src="images/Avatar.png">
+      //               <div class="flex gap-1 w-18">
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+      //               </div>
+      //             </div>
+      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      //           </div>`,
+      //               `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      //             <div class="flex justify-between items-center mb-3">
+      //               <img src="images/Avatar.png">
+      //               <div class="flex gap-1 w-18">
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+      //               </div>
+      //             </div>
+      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      //           </div>`,
+      //               `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      //             <div class="flex justify-between items-center mb-3">
+      //               <img src="images/Avatar.png">
+      //               <div class="flex gap-1 w-18">
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
+      //               </div>
+      //             </div>
+      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      //           </div>`];
+
+      const data = ['images/a1.png', 'images/a2.png', 'images/a3.png'];
+      
+      
+      // bài tập thay thế array bằng array object
+      // const data2 = [
+      //   {
+      //     avatar: '',
+      //     text: ''
+      //   }
+      // ];
 
       for(let i=0; i<data.length; i++) {
         // khởi tạo element
-        const li = document.createElement("li");
+        const div = document.createElement("div");
+
+        div.className = "bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow";
        
         // gán giá trị cho element
-        li.innerHTML = data[i];
+        div.innerHTML = `<img src=${data[i]} />`;
 
         // đưa element ở trên vào trong danh sách xác định
-        todoItems.appendChild(li);
+        todoItems.appendChild(div);
       }
 
       // khai báo 1 biến thay thế cho element ở DOM
