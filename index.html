@@ -409,7 +409,7 @@
 
               <!--start todo section-->
 
-              <ul id="todoItems"></ul>
+              <ul id="todoItems" class="flex flex-col gap-4"></ul>
 
               <!-- <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                 <div class="flex justify-between items-center mb-3">
@@ -454,7 +454,7 @@
 
                 <!--start progress section-->
 
-                <ul id="progressItems"></ul>
+                <ul id="progressItems" class="flex flex-col gap-4"></ul>
 
               <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div class="flex justify-between items-center mb-3">
@@ -499,7 +499,7 @@
 
                 <!--start Done section-->
 
-                <ul id="DoneItems"></ul>
+                <ul id="DoneItems" class="flex flex-col gap-4"></ul>
 
               <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div class="flex justify-between items-center mb-3">
@@ -542,170 +542,110 @@
   </div>
 
   <script>
-    // const input = document.getElementById("searchInput");
+    
+    
+    // Vồng lập từ 2 đến 9
+    for (let i = 2; i <10; i++) {
+      console.log(i);
+      // Viết một chương trình in ra bảng cửu chương từ 2 đến 9.
+      for (let j = 1; j < 11; j++) {
+        console.log(`${i} * ${j} = ${i*j}`);
+      }
+    }
+    //
 
-    //   input.addEventListener("keypress", 
-    //     // gọi anonymous callback  
-    //     (e) => {
-    //       alert(`bạn vừa bấm: ${e.code}`)
-    //     }
-    //   );
+    // ARRAY OF OBJECTS FOR TODO COLUMN
+    const todoTasks = [
+      {
+        id: 1,
+        avatar: 'images/a1.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 2,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 3,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      }
+    ];
 
-    //   input.addEventListener("keypress", 
-    //     logKey(e)
-    //   );
+    // ARRAY OF OBJECTS FOR PROGRESS COLUMN
+    const progressTasks = [
+      {
+        id: 4,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 5,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 6,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      }
+    ];
 
-    //   function logKey(e) {
-    //     alert(`bạn vừa bấm: ${e.code}`)
-    //   }
+    // ARRAY OF OBJECTS FOR DONE COLUMN
+    const doneTasks = [
+      {
+        id: 7,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 8,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      },
+      {
+        id: 9,
+        avatar: 'images/Avatar.png',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      }
+    ];
 
-      // khai báo 1 biến thay thế cho element ở DOM
-      const todoItems = document.getElementById("todoItems");
-
-      // const data = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-      //             <div class="flex justify-between items-center mb-3">
-      //               <img src="images/Avatar.png">
-      //               <div class="flex gap-1 w-18">
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-      //               </div>
-      //             </div>
-      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      //           </div>`,
-      //               `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-      //             <div class="flex justify-between items-center mb-3">
-      //               <img src="images/Avatar.png">
-      //               <div class="flex gap-1 w-18">
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-      //               </div>
-      //             </div>
-      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      //           </div>`,
-      //               `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-      //             <div class="flex justify-between items-center mb-3">
-      //               <img src="images/Avatar.png">
-      //               <div class="flex gap-1 w-18">
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-      //                 <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-      //               </div>
-      //             </div>
-      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      //           </div>`];
-
-      const data = ['images/a1.png', 'images/a2.png', 'images/a3.png'];
+    // FUNCTION TO RENDER TASKS
+    function renderTasks(tasksArray, elementId) {
+      const container = document.getElementById(elementId);
       
-      
-      // bài tập thay thế array bằng array object
-      // const data2 = [
-      //   {
-      //     avatar: '',
-      //     text: ''
-      //   }
-      // ];
-
-      for(let i=0; i<data.length; i++) {
-        // khởi tạo element
-        const div = document.createElement("div");
-
-        div.className = "bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow";
-       
-        // gán giá trị cho element
-        div.innerHTML = `<img src=${data[i]} />`;
-
-        // đưa element ở trên vào trong danh sách xác định
-        todoItems.appendChild(div);
-      }
-
-      // khai báo 1 biến thay thế cho element ở DOM
-      const progressItems = document.getElementById("progressItems");
-
-      const data2 = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`];
-
-      for(let i=0; i<data.length; i++) {
-        // khởi tạo element
+      // Vòng lặp qua từng task trong array
+      for (let i = 0; i < tasksArray.length; i++) {
+        const task = tasksArray[i];
+        
+        // Khởi tạo element li
         const li = document.createElement("li");
-       
-        // gán giá trị cho element
-        li.innerHTML = data2[i];
-
-        // đưa element ở trên vào trong danh sách xác định
-        progressItems.appendChild(li);
+        
+        // Gán className cho element
+        li.className = "bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow";
+        
+        // Gán HTML content cho element (sử dụng template literal)
+        li.innerHTML = `
+          <div class="flex justify-between items-center mb-3">
+            <img src="${task.avatar}" alt="Avatar">
+            <div class="flex gap-1 w-18">
+              <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png" alt="Edit"></button>
+              <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png" alt="Delete"></button>
+            </div>
+          </div>
+          <p>${task.text}</p>
+        `;
+        
+        // Đưa element vào trong container
+        container.appendChild(li);
       }
+    }
 
-        // khai báo 1 biến thay thế cho element ở DOM
-      const DoneItems = document.getElementById("DoneItems");
-
-      const data3 = [`<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`,
-                    `<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>`];
-
-      for(let i=0; i<data.length; i++) {
-        // khởi tạo element
-        const li = document.createElement("li");
-       
-        // gán giá trị cho element
-        li.innerHTML = data3[i];
-
-        // đưa element ở trên vào trong danh sách xác định
-        DoneItems.appendChild(li);
-      }
+    // RENDER ALL COLUMNS
+    renderTasks(todoTasks, 'todoItems');
+    renderTasks(progressTasks, 'progressItems');
+    renderTasks(doneTasks, 'DoneItems');
 
   </script>
   
