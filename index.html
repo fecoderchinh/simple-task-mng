@@ -350,7 +350,7 @@
 
       <!-- Sides bar -->
 
-    <main class="max-w-7xl mx-auto px-4 py-6">
+    <main class="max-w-7xl mx-auto px-4 py-6" id="mainContent">
       <div class="flex flex-col lg:flex-row gap-6">
 
           <aside class="w-full lg:w-60 shrink-0">
@@ -380,7 +380,7 @@
 
         <!-- tasks Bar -->
 
-        <div class="flex-1 space-y-6 py-3">
+        <div class="flex-1 space-y-6 py-3" id="mainTasks">
           <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white">
             <h1 class="text-3xl font-bold tracking-tight">Tasks</h1>
             <div class="flex items-center gap-4">
@@ -400,142 +400,7 @@
 
           <!-- Tasks List -->
 
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-
-                <section class="bg-todo-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                    <img src="images/To_do.png" class="w-7"> <span class="text-[#14367B]">To do</span>
-                  </div>
-
-              <!--start todo section-->
-
-              <ul id="todoItems" class="flex flex-col gap-4"></ul>
-
-              <!-- <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                <div class="flex justify-between items-center mb-3">
-                  <img src="images/Avatar.png">
-                  <div class="flex gap-1 w-18">
-                    <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                    <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                  </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div> 
-                -->
-
-              <!--end todo section-->
-
-                  </section>
-
-                <section class="bg-progress-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                    <img src="images/In_progress.png" class="w-7"> <span class="text-[#8F4F00]">In progress</span>
-                  </div>
-
-                <!--start progress section-->
-
-                <ul id="progressItems" class="flex flex-col gap-4"></ul>
-
-              <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-center mb-3">
-                      <img src="images/Avatar.png">
-                      <div class="flex gap-1 w-18">
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                        <button onclick="myFunction()"class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                      </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-center mb-3">
-                      <img src="images/Avatar.png">
-                      <div class="flex gap-1 w-18">
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                      </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-              -->
-                  <!--End progress section-->
-
-                  </section>
-
-                <section class="bg-done-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4">
-
-                  <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                    <img src="images/Done.png" class="w-7"> <span class="text-[#81290E]">Done</span>
-                  </div>
-
-                <!--start Done section-->
-
-                <ul id="DoneItems" class="flex flex-col gap-4"></ul>
-
-              <!--  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div class="flex justify-between items-center mb-3">
-                    <img src="images/Avatar.png">
-                    <div class="flex gap-1 w-18">
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                      <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                    </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-center mb-3">
-                      <img src="images/Avatar.png">
-                      <div class="flex gap-1 w-18">
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                      </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-center mb-3">
-                      <img src="images/Avatar.png">
-                      <div class="flex gap-1 w-18">
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
-                        <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>
-                      </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                <!--
-                  <!--End Done section-->
-
-                  </section>
-          </div>
+          
         </div>
       </div>
     </main>
@@ -611,41 +476,85 @@
       }
     ];
 
-    // FUNCTION TO RENDER TASKS
-    function renderTasks(tasksArray, elementId) {
-      const container = document.getElementById(elementId);
-      
-      // Vòng lặp qua từng task trong array
-      for (let i = 0; i < tasksArray.length; i++) {
-        const task = tasksArray[i];
-        
-        // Khởi tạo element li
-        const li = document.createElement("li");
-        
-        // Gán className cho element
-        li.className = "bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow";
-        
-        // Gán HTML content cho element (sử dụng template literal)
-        li.innerHTML = `
-          <div class="flex justify-between items-center mb-3">
-            <img src="${task.avatar}" alt="Avatar">
-            <div class="flex gap-1 w-18">
-              <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png" alt="Edit"></button>
-              <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png" alt="Delete"></button>
-            </div>
-          </div>
-          <p>${task.text}</p>
-        `;
-        
-        // Đưa element vào trong container
-        container.appendChild(li);
-      }
-    }
+    const container = document.getElementById('mainTasks');
+    const listTasks = document.createElement('div');
+    listTasks.className = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4";
+    listTasks.id = "listTasks";
+    container.append(listTasks);
+    const childrenEl = [];
+    for (let i = 1; i < 4; i++) {
+      const section = document.createElement('div');
+      section.className = "bg-todo-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4";
+      section.innerHTML = `
+      <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
+                    <img src="images/In_progress.png" class="w-7"> <span class="text-[#8F4F00]">In progress</span>
+                  </div>
+      `;
+      listTasks.append(section);
+      for (let j = 0; j < 1; j++) {
+        const childDiv = document.createElement('div');
+        childDiv.className = 'bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow';
 
-    // RENDER ALL COLUMNS
-    renderTasks(todoTasks, 'todoItems');
-    renderTasks(progressTasks, 'progressItems');
-    renderTasks(doneTasks, 'DoneItems');
+        const subChild = document.createElement('div');
+        subChild.className = 'flex justify-between items-center mb-3';
+
+        const childSubChild = document.createElement('div');
+        childSubChild.className = 'flex gap-1 w-18';
+
+        childSubChild.innerHTML = `<button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png"></button>
+                    <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>`;
+
+        const avatarImg = document.createElement('img');
+        avatarImg.src = 'images/Avatar.png';
+        avatarImg.alt = 'Avatar';
+        subChild.append(avatarImg);
+        subChild.append(childSubChild);
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod';
+
+        childDiv.append(subChild);
+        childDiv.append(paragraph);
+
+        section.append(childDiv);
+      }
+    }    
+
+    // FUNCTION TO RENDER TASKS
+    // function renderTasks(tasksArray, elementId) {
+    //   const container = document.getElementById(elementId);
+      
+    //   // Vòng lặp qua từng task trong array
+    //   for (let i = 0; i < tasksArray.length; i++) {
+    //     const task = tasksArray[i];
+        
+    //     // Khởi tạo element li
+    //     const li = document.createElement("li");
+        
+    //     // Gán className cho element
+    //     li.className = "bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow";
+        
+    //     // Gán HTML content cho element (sử dụng template literal)
+    //     li.innerHTML = `
+    //       <div class="flex justify-between items-center mb-3">
+    //         <img src="${task.avatar}" alt="Avatar">
+    //         <div class="flex gap-1 w-18">
+    //           <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Edit.png" alt="Edit"></button>
+    //           <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png" alt="Delete"></button>
+    //         </div>
+    //       </div>
+    //       <p>${task.text}</p>
+    //     `;
+        
+    //     // Đưa element vào trong container
+    //     container.appendChild(li);
+    //   }
+    // }
+
+    // // RENDER ALL COLUMNS
+    // renderTasks(todoTasks, 'todoItems');
+    // renderTasks(progressTasks, 'progressItems');
+    // renderTasks(doneTasks, 'DoneItems');
 
   </script>
   
