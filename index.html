@@ -482,16 +482,19 @@
     listTasks.id = "listTasks";
     container.append(listTasks);
     const childrenEl = [];
+    const childDiv = ["To do", "In progress", "Done"];
+    const colors = ["#14367B", "#8F4F00", "#81290E"];
+    const images = ["images/To_do.png", "images/In_progress.png", "images/Done.png"];
     for (let i = 1; i < 4; i++) {
       const section = document.createElement('div');
       section.className = "bg-todo-bg border border-todo-line rounded-2xl p-4 flex flex-col gap-4";
       section.innerHTML = `
       <div class="flex items-center gap-3 font-bold text-slate-700 text-xl">
-                    <img src="images/In_progress.png" class="w-7"> <span class="text-[#8F4F00]">In progress</span>
+                    <img src="${images[i - 1]}" class="w-7"> <span style="color: ${colors[i - 1]}">${childDiv[i - 1]}</span>
                   </div>
       `;
       listTasks.append(section);
-      for (let j = 0; j < 1; j++) {
+      for (let j = 0; j < 4; j++) {
         const childDiv = document.createElement('div');
         childDiv.className = 'bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow';
 
@@ -505,8 +508,9 @@
                     <button onclick="myFunction()" class="p-1 hover:bg-slate-200 rounded-full"><img src="images/Delete.png"></button>`;
 
         const avatarImg = document.createElement('img');
-        avatarImg.src = 'images/Avatar.png';
+        avatarImg.src = `images/a${j + 1}.png` ;
         avatarImg.alt = 'Avatar';
+        
         subChild.append(avatarImg);
         subChild.append(childSubChild);
 
