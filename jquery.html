@@ -38,34 +38,61 @@
         const usersContainer = document.getElementById('users-container');
         const loader = document.getElementById('loader');
         
-        async function fetchData() {
-            try {
-                // Show loader
-                loader.classList.remove('hidden');
+        // async function fetchData() {
+        //     try {
+        //         // Show loader
+        //         loader.classList.remove('hidden');
 
-                // Fetch data concurrently
-                const [postsRes, usersRes] = await Promise.all([
-                    fetch('https://jsonplaceholder.typicode.com/posts'),
-                    fetch('https://jsonplaceholder.typicode.com/users')
-                ]);
+        //         // Fetch data concurrently
+        //         const [postsRes, usersRes] = await Promise.all([
+        //             fetch('https://jsonplaceholder.typicode.com/posts'),
+        //             fetch('https://jsonplaceholder.typicode.com/users')
+        //         ]);
 
-                let posts = await postsRes.json();
-                let users = await usersRes.json();
+        //         let posts = await postsRes.json();
+        //         let users = await usersRes.json();
 
-                // Render data
-                displayPosts(posts.slice(0, 10));
-                displayUsers(users);
+        //         // Render data
+        //         displayPosts(posts.slice(0, 10));
+        //         displayUsers(users);
 
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                postsContainer.innerHTML = `<p class="text-red-500 font-medium">Failed to load content.</p>`;
+
+
+        //     } catch (error) {
+        //         console.error("Error fetching data:", error);
+        //         postsContainer.innerHTML = `<p class="text-red-500 font-medium">Failed to load content.</p>`;
                 
-            } finally {
-                // Hide loader
-                loader.classList.add('hidden');
-            }
-        }
+        //     } finally {
+        //         // Hide loader
+        //         loader.classList.add('hidden');
+        //     }
+        // }
 
+                async function fetchData() {
+                    try {
+                        loader.classList.remove('hidden');
+
+                        const postsRes = await fetch('https://jsonplaceholder.typicode.com/posts')
+                        const usersRes = await fetch('https://jsonplaceholder.typicode.com/users')
+                        
+                        const posts = await postsRes.json()
+                        const users = await usersRes.json()
+                       
+                        displayPosts(posts.slice(0, 10));
+                        displayUsers(users);
+
+                        console.log(posts)
+                        console.log(users)
+                    } catch (error) {
+                        console.error("Error fetching data:", error);
+                        postsContainer.innerHTML = `<p class="text-red-500 font-medium">Failed to load content.</p>`;
+                    } finally {
+                         loader.classList.add('hidden');
+
+                    }
+                    }
+
+                    
         function displayPosts(posts) {
             postsContainer.innerHTML = posts.map((post, index) => `
                 <div class="pt-4 ${index === 0 ? 'pt-0' : ''}">
